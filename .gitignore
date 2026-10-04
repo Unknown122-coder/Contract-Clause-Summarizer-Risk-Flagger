@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+.venv/
+env/
+.env              # API keys go here — never commit
+report.json
+*.log
+.DS_Store
+1.pdf

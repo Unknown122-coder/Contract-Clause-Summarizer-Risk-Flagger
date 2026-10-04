@@ -1,0 +1,27 @@
+api:
+  provider: groq
+  model: qwen/qwen3.8-27b          # llama-3.1-70b-versatile is decommissioned; qwen3.6-27b name was wrong too
+  api_key_env: OPENAI_API_KEY   # groq: reads GROQ_API_KEY
+  base_url: https://api.groq.com/openai/v1   # groq endpoint
+
+risk_rubric:
+  - auto_renewal
+  - liability_cap
+  - termination
+  - arbitration
+  - data_privacy
+  - unilateral_change
+  - indemnification
+  - governing_law
+  - hidden_fees
+  - non_compete
+
+output:
+  format: json
+  save_report: true
+  report_path: report.json
+  plain_english_rewrite: true
+  max_clauses_to_flag: 10
+
+limits:
+  max_doc_chars: 20000      # truncate very long docs with a warning
